@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { ButtonProps } from './Button';
+
 import {
   DISABLED_OPACITY,
   SECONDARY_TEXT_COLOR,
