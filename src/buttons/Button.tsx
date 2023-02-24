@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react';
 
-export default function Button() {
-  return <div>Button</div>;
-}
+export const Button: React.FC = () => {
+  return <button>Hello world</button>;
+};
