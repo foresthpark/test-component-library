@@ -1,6 +1,6 @@
 {
   "name": "@foresthpark/test-component-library",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Test component library",
   "main": "dist/index.cjs",
   "module": "dist/index.esm.js",
