@@ -2,15 +2,21 @@
   "name": "@foresthpark/test-component-library",
   "version": "0.0.0",
   "description": "Test component library",
-  "main": "index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.esm.js",
+  "sideEffects": false,
+  "types": "dist/typings/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "reset": "rm -rf node_modules && rm -rf package-lock.json && npm install",
-    "format": "prettier --write \"src/**/*\"",
-    "lint:format": "prettier --check \"src/**/*\"",
-    "lint": "eslint src/**"
+    "format": "npx prettier --write \"src/**/*\"",
+    "lint:format": "npx prettier --check \"src/**/*\"",
+    "lint": "npx eslint src/**",
+    "build": "npm run build:js && npm run build:types",
+    "build:js": "rollup -c rollup.config.js",
+    "build:types": "tsc -p tsconfig.build.json"
   },
   "repository": {
     "type": "git",
@@ -29,6 +35,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
+    "@babel/plugin-transform-runtime": "^7.21.0",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -49,6 +59,9 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-node-externals": "^2.2.0",
     "typescript": "^4.9.5"
   },
   "dependencies": {

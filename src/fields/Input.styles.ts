@@ -7,6 +7,7 @@ import {
   PRIMARY_COLOR,
   DISABLED_OPACITY,
 } from '../utils/styles';
+import { TextareaProps } from './TextArea';
 
 export const StyledInput = styled.input`
   display: block;
@@ -31,4 +32,10 @@ export const StyledInput = styled.input`
     background-color: ${SECONDARY_COLOR};
     opacity: ${DISABLED_OPACITY};
   }
+`;
+
+export const StyledTextArea = styled(StyledInput as 'textarea').attrs({
+  as: 'textarea',
+})<TextareaProps>`
+  resize: ${({ isResizable }) => !isResizable && 'none'};
 `;

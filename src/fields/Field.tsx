@@ -3,10 +3,12 @@ import { FieldContext } from './FieldContext';
 import { useUniqueId } from '../utils/useUniqueId';
 import { Label } from './Label';
 import { Input } from './Input';
+import { TextArea } from './TextArea';
 
 interface FieldComposition {
   Label: typeof Label;
   Input: typeof Input;
+  TextArea: typeof TextArea;
 }
 
 interface FieldProps {
@@ -22,3 +24,4 @@ export const Field: React.FC<FieldProps> & FieldComposition = ({
 
 Field.Label = Label;
 Field.Input = Input;
+Field.TextArea = TextArea;
