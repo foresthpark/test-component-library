@@ -1,6 +1,6 @@
 {
   "name": "@foresthpark/test-component-library",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Test component library",
   "main": "dist/index.cjs",
   "module": "dist/index.esm.js",
@@ -13,7 +13,7 @@
     "reset": "rm -rf node_modules && rm -rf package-lock.json && npm install",
     "format": "npx prettier --write \"src/**/*\"",
     "lint:format": "npx prettier --check \"src/**/*\"",
-    "lint": "npx eslint src/**",
+    "lint": "eslint src/**",
     "build": "npm run build:js && npm run build:types",
     "build:js": "rollup -c rollup.config.js",
     "build:types": "tsc -p tsconfig.build.json"
